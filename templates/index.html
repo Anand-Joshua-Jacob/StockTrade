@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Welcome
+{% endblock %}
+
+
+
+{% block main %}
+
+
+<table class = "table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Symbol</th>
+                            <th>Name</th>
+                            <th>Shares</th>
+                            <th>Price</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        {% for i in l %}
+                        <tr>
+
+                            <td>{{ symbols[i] }}</td>
+                            <td>{{ names[i] }} </td>
+                            <td>{{ shrs[i] }} </td>
+                            <td> {{ prices[i] | usd }} </td>
+                            <td>{{ totals[i] | usd}} </td>
+
+                        </tr>
+                        {% endfor %}
+
+
+
+                        <tr>
+
+                            <td>
+                                GRAND TOTAL IS {{ gt }}
+                            </td>
+
+                            <td> </td><td> </td><td> </td><td> </td>
+                        </tr>
+                    </tbody>
+    </table>
+
+{% endblock %}
